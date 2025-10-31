@@ -1,0 +1,27 @@
+
+ 
+n=float(input("Enter the input decimal number = ")) 
+i,f=str(n).split('.') 
+i,f=int(i),float('0.'+f) 
+digits='0123456789ABCDEF' 
+r1='' 
+while i>0: 
+    r1=digits[i%16]+r1 
+    i//=16 
+r2='' 
+frac=f 
+for _ in range(5): 
+    if frac==0: break 
+    frac*=16 
+    d=int(frac) 
+    r2+=digits[d] 
+    frac-=d 
+print(f"Decimal {int(n)} converted into base-16 = {r1}") 
+print(f"Fractional decimal {str(f)[2:]} converted into base-16 = {r2}") 
+print(f"Hence base-16 equivalent of input decimal number = {r1}.{r2}") 
+ 
+ 
+ 
+ 
+ 
+ 
