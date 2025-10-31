@@ -1,0 +1,15 @@
+
+n=float(input("Enter the input decimal number = ")) 
+i,f=str(n).split('.') 
+i,f=int(i),float('0.'+f) 
+r1='' 
+while i>0: 
+    r1=str(i%2)+r1 
+    i//=2 
+r2='' 
+frac=f 
+for _ in range(5): 
+    frac*=2; d=int(frac); r2+=str(d); frac-=d 
+print(f"Decimal {int(n)} converted into base-2 = {r1}") 
+print(f"Fractional decimal {str(f)[2:]} converted into base-2 = {r2}") 
+print(f"Hence base-2 equivalent of input decimal number = {r1}.{r2}")
